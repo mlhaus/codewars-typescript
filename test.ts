@@ -1,16 +1,10 @@
-import { countSheeps } from './solution';
-import { expect } from "chai";
+import { assert } from "chai";
+import { howMuchILoveYou } from "./solution";
 
-var array1 = [true,  true,  true,  false,
-              true,  true,  true,  true ,
-              true,  false, true,  false,
-              true,  false, false, true ,
-              true,  true,  true,  true ,
-              false, false, true,  true ];            
-  
-describe('countSheeps', function() {
-  it("should work correctly", () => {
-   const result1 = countSheeps(array1); 
-   expect(result1).to.equal(17, "There are 17 sheeps in total, not " + result1);
+describe("I love you...", function() {
+  it("Basic tests", function() {
+    assert.equal(howMuchILoveYou(7), "I love you", "Number of petals can be higher than 6");
+    assert.equal(howMuchILoveYou(3), "a lot");
+    assert.equal(howMuchILoveYou(6), "not at all");
   });
 });
