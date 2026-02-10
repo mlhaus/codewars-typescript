@@ -1,7 +1,9 @@
-export const summation = (num:number)=> { 
-  let sum = 0;
-  for(let i = 1; i <= num; i+=1) {
-    sum += i;
-  }
-  return sum;
+export function smallEnough(arr: number[], limit: number): boolean{
+  // for (let num of arr) {
+  //   if(num > limit) {
+  //     return false;
+  //   }
+  // }
+  // return true;
+  return arr.every(num => num <= limit)
 }
