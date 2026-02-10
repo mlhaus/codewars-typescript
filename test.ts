@@ -1,10 +1,9 @@
-import { assert } from "chai";
-import { howMuchILoveYou } from "./solution";
+import solution = require('./solution');
+import {assert} from "chai";
 
-describe("I love you...", function() {
-  it("Basic tests", function() {
-    assert.equal(howMuchILoveYou(7), "I love you", "Number of petals can be higher than 6");
-    assert.equal(howMuchILoveYou(3), "a lot");
-    assert.equal(howMuchILoveYou(6), "not at all");
+describe("squareDigits", function() {
+  it("should pass a sample test", function() {
+    assert.strictEqual(solution.Kata.squareDigits(9119), 811181);
+    assert.strictEqual(solution.Kata.squareDigits(0), 0);
   });
 });
