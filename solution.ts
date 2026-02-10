@@ -1,19 +1,35 @@
-export class Kata {
-  static squareDigits(num: number): number {
-    // if(num == 0) {
-    //   return 0;
-    // }
-    // let result = "";
-    // while (num > 0) {
-    //   const lastDigit = num % 10;
-    //   num = Math.floor(num / 10); // Everything but the last digit
-    //   const squaredDigit = lastDigit * lastDigit;
-    //   result = squaredDigit + result;
-    // }
-    // return parseInt(result); // Convert the result string back to a number
-    return +num.toString() // 1. Convert the number into a string, 5. Convert the string into a number
-               .split('') // 2. Convert the string into an array of characters
-               .map(n => Math.pow(+n,2)) // 3. Convert each string into a number, then square its value
-               .join(''); // 4. Convert the array back into a string
-  }
+export function isValidWalk(walk: string[]) {
+  // const directions = {
+  //   n: 0,
+  //   s: 0,
+  //   w: 0,
+  //   e: 0,
+  // }
+
+  // for (const dir of walk) {
+  //   directions[dir as keyof typeof directions] += 1;
+  // }
+
+  // return walk.length == 10 && 
+  //       directions.n == directions.s && 
+  //       directions.w == directions.e;
+
+  if (walk.length !== 10) return false;
+
+  type directionValues = {
+    [key: string]: number;
+  };
+
+  const directions: directionValues = {
+    n: 0,
+    s: 0,
+    w: 0,
+    e: 0,
+  };
+
+  walk.forEach((direction: string) => {
+    directions[direction]++;
+  });
+
+  return directions.n === directions.s && directions.w === directions.e;
 }

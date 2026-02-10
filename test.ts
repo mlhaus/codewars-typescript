@@ -1,9 +1,14 @@
-import solution = require('./solution');
-import {assert} from "chai";
+// See https://www.chaijs.com for how to use Chai.
+import { assert } from "chai";
 
-describe("squareDigits", function() {
-  it("should pass a sample test", function() {
-    assert.strictEqual(solution.Kata.squareDigits(9119), 811181);
-    assert.strictEqual(solution.Kata.squareDigits(0), 0);
+import { isValidWalk } from "./solution";
+
+// TODO Add your tests here
+describe("example", function() {
+  it("test", function() {
+    assert.equal(isValidWalk(['n','s','n','s','n','s','n','s','n','s']), true);
+    assert.equal(isValidWalk(['w','e','w','e','w','e','w','e','w','e','w','e']), false);
+    assert.equal(isValidWalk(['w']), false);
+    assert.equal(isValidWalk(['n','n','n','s','n','s','n','s','n','s']), false);
   });
 });
